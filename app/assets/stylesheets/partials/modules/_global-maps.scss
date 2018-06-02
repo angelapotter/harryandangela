@@ -1,0 +1,36 @@
+// COLORS
+
+$gray-shades: (
+  darkest: #333,
+  dark: #666,
+  medium-dark: #8a8a8a,
+  medium: #999,
+  light: #aaa,
+  lighter: #ccc,
+  lightest: #eee,
+  off-white: #F5F4F1
+);
+
+$brand-colors: (
+  primary: #2889CC
+);
+
+@function gray( $shade: dark ) {
+  @return map-get( $gray-shades, $shade );
+};
+
+@function brand( $color: primary ) {
+  @return map-get( $brand-colors, $color );
+};
+
+// ALIGNMENT
+
+$z-indexes: (
+  page: 0,
+  header: 10,
+  modal:  100,
+);
+
+@function z-index( $layer ) {
+  @return map-get( $z-indexes, $layer );
+}

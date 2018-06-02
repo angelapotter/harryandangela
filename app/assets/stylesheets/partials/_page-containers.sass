@@ -1,0 +1,38 @@
+$page-width: 1280px
+$page-padding-x: 40px
+
+.wrapper
+  width: 100%
+  min-height: 100%
+  overflow: hidden
+
+.content
+  position: relative
+
+.container,
+.container--page-width
+  width: 100%
+
+.container
+  @extend .clearfix
+  +box-sizing( border-box )
+  margin: 0 auto
+  padding: 0
+
+=content-container( $width: $page-width )
+  max-width: $width
+
+  &.container--content
+    +mq( $width + $page-padding-x * 2 )
+      padding-left: $page-padding-x
+      padding-right: $page-padding-x
+      max-width: 100%
+
+.container--page-width
+  +content-container
+
+.container--first
+  padding-top: 40px
+
+.container--last
+  padding-bottom: 40px
